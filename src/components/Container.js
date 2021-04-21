@@ -21,7 +21,7 @@ class Container extends Component {
         return (
             <div>
              <SearchInput/>
-             <div className="container-fluid mt-5">
+             <div className="container-fluid mt-5" style={{background:" #FDEDEC "}}>
                  <table className="table table-striped">
                  <thead>
                  <tr>

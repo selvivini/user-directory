@@ -1,5 +1,9 @@
 import React from 'react'
 
+const formatDate = (date)=>{
+   return date.split('T',[1])
+}
+
 function Employees(props) {
     return (
         <>
@@ -8,7 +12,7 @@ function Employees(props) {
               <img alt= {props.firstName} src= {props.image} className="rounded-circle img-fluid"/>
             </td>
             <td>
-                {props.gender}
+            {props.gender}
             </td>
             <td>
              {props.firstName}
@@ -17,7 +21,7 @@ function Employees(props) {
              {props.lastName}
             </td>
             <td>
-             {props.dob}
+             {formatDate(props.dob)}
             </td>
             <td>
              {props.email}
