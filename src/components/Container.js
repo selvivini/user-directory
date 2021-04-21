@@ -16,6 +16,12 @@ class Container extends Component {
           this.setState({employees: response.data.results})
       })
     }
+
+    sortByFirstName = ()=>{
+        const sortedEmployees= this.state.employees
+        sortedEmployees.sort((a,b)=>a.name.first> b.name.first? 1: -1)
+        this.setState({employees: sortedEmployees})
+    }
     
     render() {
         return (
@@ -27,7 +33,7 @@ class Container extends Component {
                  <tr>
             <th scope="col">Avatar</th>
             <th scope="col">Gender</th>
-            <th scope="col">FirstName</th>
+            <th scope="col" onClick={this.sortByFirstName}>FirstName</th>
             <th scope="col">LastName</th>
             <th scope="col">Dob</th>
             <th scope="col">Email</th>
