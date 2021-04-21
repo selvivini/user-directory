@@ -27,6 +27,18 @@ class Container extends Component {
         sortedEmployees.sort((a,b)=>a.name.last> b.name.last? 1: -1)
         this.setState({employees: sortedEmployees})
     }
+    sortByEmail = ()=>{
+        const sortedEmployees= this.state.employees
+        sortedEmployees.sort((a,b)=>a.email> b.email? 1: -1)
+        this.setState({employees: sortedEmployees})
+    }
+
+    sortByDob= ()=>{
+        const sortedEmployees= this.state.employees
+        sortedEmployees.sort((a,b)=>b.dob.age - a.dob.age)
+        this.setState({employees: sortedEmployees})
+    }
+    
     render() {
         return (
             <div>
@@ -39,8 +51,8 @@ class Container extends Component {
             <th scope="col">Gender</th>
             <th scope="col" className="dropdown-toggle" onClick={this.sortByFirstName}>FirstName</th>
             <th scope="col" className="dropdown-toggle" onClick={this.sortByLastName}>LastName</th>
-            <th scope="col">Dob</th>
-            <th scope="col">Email</th>
+            <th scope="col"className="dropdown-toggle" onClick = {this.sortByDob}>Dob</th>
+            <th scope="col"className="dropdown-toggle" onClick={this.sortByEmail}>Email</th>
             <th scope="col">Phone number</th>
                 </tr>
                  </thead>
