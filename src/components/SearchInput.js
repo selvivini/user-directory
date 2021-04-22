@@ -9,7 +9,7 @@ function SearchInput(props) {
             className="form-control-lg" 
             onChange={(e)=>props.startFilter(e)} 
             type= "text"/> 
-            <p>Filter employees by their name</p>
+            <p className="text-primary mt-3">Filter employees by their Firstname or LastName or email</p>
         </>
     )
 }

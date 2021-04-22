@@ -45,9 +45,9 @@ filterEmployees = (e)=>{
     const {employees,search} = this.state;
    this.setState({search: e.target.value})
     const filteredEmployees = employees.filter(
-        (employee)=>employee.name.first.toLowerCase().indexOf(search.toLowerCase())>-1 
-        // employee.name.last.toLowerCase().indexOf(search.toLowerCase())>-1 ||
-        // employee.email.toLowerCase().indexOf(search.toLowerCase())>-1 
+        (employee)=>employee.name.first.toLowerCase().indexOf(search.toLowerCase())>-1 ||
+        employee.name.last.toLowerCase().indexOf(search.toLowerCase())>-1 ||
+        employee.email.toLowerCase().indexOf(search.toLowerCase())>-1 
         )
    
     this.setState({filteredEmployees:filteredEmployees, filtered: true})
