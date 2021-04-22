@@ -1,9 +1,14 @@
 import React from 'react'
 
-function SearchInput() {
+function SearchInput(props) {
     return (
         <>
-            <input placeholder="search" className="form-control-lg" /> 
+            <input 
+            name= "search"
+            placeholder="search" 
+            className="form-control-lg" 
+            onChange={(e)=>props.startFilter(e)} 
+            type= "text"/> 
             <p>Filter employees by their name</p>
         </>
     )
