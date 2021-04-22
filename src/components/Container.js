@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import SearchInput from './SearchInput';
 import Employees from './Employees';
 import Api from '../utils/Api';
@@ -23,21 +24,21 @@ class Container extends Component {
 	sortByFirstName = () => {
 		const sortedEmployees = this.state.employees;
 		sortedEmployees.sort((a, b) => (a.name.first > b.name.first ? 1 : -1));
-		this.setState({ employees: sortedEmployees });
+		this.setState({ employees: sortedEmployees , filtered:false});
 	};
 
 	// sort by last name
 	sortByLastName = () => {
 		const sortedEmployees = this.state.employees;
 		sortedEmployees.sort((a, b) => (a.name.last > b.name.last ? 1 : -1));
-		this.setState({ employees: sortedEmployees });
+		this.setState({ employees: sortedEmployees, filtered:false});
 	};
 
 	//sort by email
 	sortByEmail = () => {
 		const sortedEmployees = this.state.employees;
 		sortedEmployees.sort((a, b) => (a.email > b.email ? 1 : -1));
-		this.setState({ employees: sortedEmployees });
+		this.setState({ employees: sortedEmployees, filtered:false });
 	};
 	// sort by dob
 	sortByDob = () => {
@@ -49,10 +50,8 @@ class Container extends Component {
 	//filters the employees based on first name in search input
 	filterEmployees = (e) => {
 		const { employees, search } = this.state;
-		this.setState({ search: e.target.value });
-		if (!e.target.value) {
-			alert('please enter a valid input');
-		}
+		this.setState({ search: e.target.value});
+		
 		const filteredEmployees = employees.filter(
 			(employee) =>
 				employee.name.first.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
@@ -67,7 +66,8 @@ class Container extends Component {
 		return (
 			<div>
 				<SearchInput startFilter={this.filterEmployees} name='search' />
-				<div className='container-fluid mt-5' style={{ background: ' #FDEDEC ' }}>
+				<div className='container-fluid mt-5 bg-light' style={{ background: '#FDE7E8' }}>
+                    <p className="text-danger">click the columns with dropdown for sorting the employees by firstName, lastname, email and Dob</p>
 					<table className='table table-striped'>
 						<thead>
 							<tr>
