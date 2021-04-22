@@ -1,5 +1,6 @@
 import React from 'react'
 
+//converting the date fetched from api to a valid input
 const formatDate = (date)=>{
    return date.split('T',[1])
 }
