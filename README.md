@@ -42,4 +42,4 @@ sorted by dob
 filter by name
 ![filtername](public/images/filterName.PNG)
 
-please visit the deployed link on gh-pages [employee-directory]()
+please visit the deployed link on gh-pages [employee-directory](https://selvivini.github.io/user-directory/)
